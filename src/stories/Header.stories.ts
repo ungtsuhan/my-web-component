@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/web-components-vite';
-
 import { fn } from 'storybook/test';
 
 import type { HeaderProps } from './Header';
