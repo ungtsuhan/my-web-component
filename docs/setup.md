@@ -9,7 +9,7 @@ npm create vite@latest .
 - Framework: Lit
 - Variant: Typescript
 
-## Setup Prettier
+## Prettier Setup
 
 ### Install Prettier
 
@@ -54,7 +54,7 @@ In `package.json`:
 npm run format
 ```
 
-## Setup ESLint
+## ESLint Setup
 
 ### Install ESLint and Plugins
 
@@ -106,14 +106,44 @@ In `package.json:`
 ### Run ESLint
 
 ```bash
-# Check for linting issues
-npm run lint
-
-# Auto-fix issues where possible
-npm run lint:fix
+npm run lint      # check for issues
+npm run lint:fix  # auto-fix issues
 ```
 
-## Setup Storybook
+## Husky Setup
+
+### Install Husky
+
+```bash
+npm install --save-dev husky
+```
+
+### Enable Git Hooks
+
+```bash
+npx husky init
+```
+
+It creates a `pre-commit` script in `.husky/` and updates the prepare script in `package.json`
+
+### Update Pre-commit Hook
+
+To automatically run ESLint auto-fix and Prettier formatting before each commit:
+
+```bash
+npm run lint:fix && npm run format
+```
+
+Now, whenever you commit changes:
+
+```bash
+git add .
+git commit -m "your commit message"
+```
+
+Husky will first format files and fix linting issues, preventing unformatted or broken code from entering the repository.
+
+## Storybook Setup
 
 ```bash
 npm create storybook@latest
