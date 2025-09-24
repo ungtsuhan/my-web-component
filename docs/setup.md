@@ -38,10 +38,20 @@ Add a `.prettierignore` to skip node_modules, etc
 node_modules
 ```
 
-### Format All Files
+### Add Prettier Script
+
+In `package.json`:
+
+```json
+"scripts": {
+  "format": "prettier --write ."
+}
+```
+
+### Format Files
 
 ```bash
-npx prettier --write .
+npm run format
 ```
 
 ## Setup ESLint
@@ -75,14 +85,25 @@ export default defineConfig(eslint.configs.recommended, tseslint.configs.recomme
 });
 ```
 
+### Add ESLint Scripts
+
+In `package.json:`
+
+```json
+"scripts": {
+  "lint": "eslint . --ext .ts,.js",
+  "lint:fix": "eslint . --ext .ts,.js --fix"
+}
+```
+
 ### Run ESLint
 
 ```bash
-# Check for issues
-npx eslint . --ext .ts,.js
+# Check for linting issues
+npm run lint
 
-# Auto-fix where possible
-npx eslint . --ext .ts,.js --fix
+# Auto-fix issues where possible
+npm run lint:fix
 ```
 
 ## Setup Storybook
