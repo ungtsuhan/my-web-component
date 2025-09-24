@@ -141,7 +141,7 @@ git add .
 git commit -m "your commit message"
 ```
 
-Husky will first format files and fix linting issues, preventing unformatted or broken code from entering the repository.
+Husky will first fix linting issues and format files, preventing unformatted or broken code from entering the repository.
 
 ## Storybook Setup
 
